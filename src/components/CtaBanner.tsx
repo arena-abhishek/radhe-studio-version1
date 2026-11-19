@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { AppRoute } from '../config/studioConfig';
 import { mediaManifest } from '../config/mediaManifest';
+import { RevealSection } from './RevealSection';
 
 interface CtaBannerProps {
   onNavigate: (route: AppRoute) => void;
@@ -24,7 +25,7 @@ export function CtaBanner({ onNavigate }: CtaBannerProps) {
         className="absolute inset-0 bg-gradient-to-t from-[#282520]/90 via-[#282520]/60 to-[#282520]/45"
       />
 
-      <div className="relative mx-auto max-w-[1280px] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+      <RevealSection as="div" className="relative mx-auto max-w-[1280px] px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
         <div className="max-w-2xl">
           <p className="text-xs font-medium tracking-[0.2em] text-[#D2BC9E] uppercase">
             Commission &amp; Inquiries
@@ -60,7 +61,7 @@ export function CtaBanner({ onNavigate }: CtaBannerProps) {
             </a>
           </div>
         </div>
-      </div>
+      </RevealSection>
     </section>
   );
 }

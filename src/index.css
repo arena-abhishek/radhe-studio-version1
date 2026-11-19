@@ -67,6 +67,19 @@
   animation: soft-fade-up 380ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  animation: soft-fade-up 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -74,8 +87,12 @@
   .editorial-marquee-track {
     animation: none;
   }
-  .page-enter {
-    animation: none;
+  .page-enter,
+  .reveal-on-scroll,
+  .reveal-on-scroll.is-revealed {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
   .editorial-hover-img {
     transform: none !important;

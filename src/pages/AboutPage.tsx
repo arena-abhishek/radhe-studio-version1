@@ -3,6 +3,7 @@ import { AppRoute, studioConfig } from '../config/studioConfig';
 import { mediaManifest } from '../config/mediaManifest';
 import { EditorialImage } from '../components/EditorialImage';
 import { CtaBanner } from '../components/CtaBanner';
+import { RevealSection } from '../components/RevealSection';
 
 interface AboutPageProps {
   onNavigate: (route: AppRoute) => void;
@@ -28,7 +29,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
       {/* Narrative + Conceptual BTS Frame */}
       <section className="border-t border-[#D2BC9E]/60 bg-[#EFE9DF]/65 py-16 lg:py-24">
-        <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16 lg:px-12">
+        <RevealSection as="div" className="mx-auto grid max-w-[1280px] items-center gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16 lg:px-12">
           <div className="lg:col-span-6">
             <EditorialImage
               src={mediaManifest.aboutBts.src}
@@ -75,11 +76,11 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               </a>
             </div>
           </div>
-        </div>
+        </RevealSection>
       </section>
 
       {/* Transparent Studio Identity Ledger */}
-      <section className="mx-auto max-w-[1280px] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+      <RevealSection className="mx-auto max-w-[1280px] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="text-xs font-medium tracking-[0.2em] text-[#8B5742] uppercase">
@@ -144,7 +145,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             </div>
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       <CtaBanner onNavigate={onNavigate} />
     </div>

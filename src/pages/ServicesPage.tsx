@@ -4,6 +4,7 @@ import { AppRoute, studioConfig } from '../config/studioConfig';
 import { mediaManifest } from '../config/mediaManifest';
 import { EditorialImage } from '../components/EditorialImage';
 import { CtaBanner } from '../components/CtaBanner';
+import { RevealSection } from '../components/RevealSection';
 
 interface ServicesPageProps {
   onNavigate: (route: AppRoute) => void;
@@ -52,7 +53,7 @@ export function ServicesPage({ onNavigate, onSelectService }: ServicesPageProps)
       {/* Proposed Service Sections */}
       {studioConfig.showProposedServices ? (
         <section className="border-t border-[#D2BC9E]/60">
-          <div className="mx-auto max-w-[1280px] divide-y divide-[#D2BC9E]/60 px-5 sm:px-8 lg:px-12">
+          <RevealSection as="div" className="mx-auto max-w-[1280px] divide-y divide-[#D2BC9E]/60 px-5 sm:px-8 lg:px-12">
             {studioConfig.proposedServices.map((service, index) => {
               const image = SERVICE_IMAGES[index % SERVICE_IMAGES.length];
               const isReversed = index % 2 === 1;
@@ -110,7 +111,7 @@ export function ServicesPage({ onNavigate, onSelectService }: ServicesPageProps)
                 </article>
               );
             })}
-          </div>
+          </RevealSection>
         </section>
       ) : (
         <section className="mx-auto max-w-[1280px] border-t border-[#D2BC9E]/60 px-5 py-16 sm:px-8 lg:px-12">
@@ -134,7 +135,7 @@ export function ServicesPage({ onNavigate, onSelectService }: ServicesPageProps)
 
       {/* Truthful Service FAQs */}
       <section className="border-t border-[#D2BC9E]/60 bg-[#EFE9DF]/65 py-20 lg:py-24">
-        <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
+        <RevealSection as="div" className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <p className="text-xs font-medium tracking-[0.2em] text-[#8B5742] uppercase">
@@ -185,7 +186,7 @@ export function ServicesPage({ onNavigate, onSelectService }: ServicesPageProps)
               })}
             </div>
           </div>
-        </div>
+        </RevealSection>
       </section>
 
       <CtaBanner onNavigate={onNavigate} />

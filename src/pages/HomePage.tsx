@@ -3,6 +3,7 @@ import { AppRoute, studioConfig } from '../config/studioConfig';
 import { mediaManifest, type MediaAssetItem } from '../config/mediaManifest';
 import { EditorialImage } from '../components/EditorialImage';
 import { CtaBanner } from '../components/CtaBanner';
+import { RevealSection } from '../components/RevealSection';
 
 interface HomePageProps {
   onNavigate: (route: AppRoute) => void;
@@ -110,7 +111,7 @@ export function HomePage({ onNavigate, onSelectService, onOpenLightbox }: HomePa
       </div>
 
       {/* Visual Story Introduction */}
-      <section className="mx-auto max-w-[1280px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+      <RevealSection className="mx-auto max-w-[1280px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <EditorialImage
@@ -151,11 +152,11 @@ export function HomePage({ onNavigate, onSelectService, onOpenLightbox }: HomePa
             </div>
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Bespoke Featured Portfolio */}
       <section className="border-t border-[#D2BC9E]/60 bg-[#EFE9DF]/65 py-20 lg:py-28">
-        <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
+        <RevealSection as="div" className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <div className="flex flex-col justify-between gap-6 border-b border-[#D2BC9E]/70 pb-8 sm:flex-row sm:items-end">
             <div>
               <p className="text-xs font-medium tracking-[0.2em] text-[#8B5742] uppercase">
@@ -289,12 +290,12 @@ export function HomePage({ onNavigate, onSelectService, onOpenLightbox }: HomePa
               </div>
             </div>
           </div>
-        </div>
+        </RevealSection>
       </section>
 
       {/* Services Preview */}
       {studioConfig.showProposedServices && (
-        <section className="mx-auto max-w-[1280px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <RevealSection className="mx-auto max-w-[1280px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="flex flex-col justify-between gap-6 border-b border-[#D2BC9E]/70 pb-8 sm:flex-row sm:items-end">
             <div className="max-w-2xl">
               <p className="text-xs font-medium tracking-[0.2em] text-[#8B5742] uppercase">
@@ -347,11 +348,11 @@ export function HomePage({ onNavigate, onSelectService, onOpenLightbox }: HomePa
               </div>
             ))}
           </div>
-        </section>
+        </RevealSection>
       )}
 
       {/* Story / Process Section */}
-      <section className="border-t border-[#D2BC9E]/60 bg-[#F8F5EF] py-20 lg:py-24">
+      <RevealSection className="border-t border-[#D2BC9E]/60 bg-[#F8F5EF] py-20 lg:py-24">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <div className="max-w-xl">
             <p className="text-xs font-medium tracking-[0.2em] text-[#8B5742] uppercase">
@@ -374,7 +375,7 @@ export function HomePage({ onNavigate, onSelectService, onOpenLightbox }: HomePa
             ))}
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       <CtaBanner onNavigate={onNavigate} />
     </div>

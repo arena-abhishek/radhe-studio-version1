@@ -4,6 +4,7 @@ import { mediaManifest, type MediaAssetItem } from '../config/mediaManifest';
 import { filterPortfolioItems, type PortfolioFilter } from '../utils/inquiry';
 import { EditorialImage } from '../components/EditorialImage';
 import { CtaBanner } from '../components/CtaBanner';
+import { RevealSection } from '../components/RevealSection';
 
 interface PortfolioPageProps {
   onNavigate: (route: AppRoute) => void;
@@ -76,7 +77,7 @@ export function PortfolioPage({ onNavigate, onOpenLightbox }: PortfolioPageProps
       </section>
 
       {/* Asymmetrical Multi-Aspect Editorial Grid */}
-      <section className="mx-auto max-w-[1280px] px-5 pb-24 sm:px-8 lg:px-12">
+      <RevealSection className="mx-auto max-w-[1280px] px-5 pb-24 sm:px-8 lg:px-12">
         {items.length === 0 ? (
           <div className="border border-[#D2BC9E] bg-[#EFE9DF]/50 p-12 text-center">
             <p className="font-serif text-2xl text-[#282520]">
@@ -141,7 +142,7 @@ export function PortfolioPage({ onNavigate, onOpenLightbox }: PortfolioPageProps
             })}
           </div>
         )}
-      </section>
+      </RevealSection>
 
       <CtaBanner onNavigate={onNavigate} />
     </div>

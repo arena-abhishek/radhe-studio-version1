@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Check, Copy, MessageSquare } from 'lucide-react';
 import { studioConfig } from '../config/studioConfig';
+import { RevealSection } from '../components/RevealSection';
 import {
   buildInquirySummary,
   buildWhatsAppDeepLink,
@@ -152,7 +153,7 @@ export function ContactPage({ preselectedService }: ContactPageProps) {
           </div>
 
           {/* Right Form & Interactive Summary */}
-          <div className="border border-[#D2BC9E]/70 bg-[#EFE9DF]/55 p-6 sm:p-10 lg:col-span-7">
+          <RevealSection as="div" className="border border-[#D2BC9E]/70 bg-[#EFE9DF]/55 p-6 sm:p-10 lg:col-span-7">
             <h2 className="font-serif text-3xl font-normal text-[#282520]">
               Prepare Your Booking Note
             </h2>
@@ -410,7 +411,7 @@ export function ContactPage({ preselectedService }: ContactPageProps) {
                 </div>
               </div>
             )}
-          </div>
+          </RevealSection>
         </div>
       </section>
     </div>
