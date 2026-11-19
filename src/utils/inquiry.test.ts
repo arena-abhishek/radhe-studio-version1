@@ -7,6 +7,7 @@ import {
   validateInquiry,
   buildInquirySummary,
   buildWhatsAppDeepLink,
+  calculateMainScrollProgress,
 } from './inquiry';
 import { mediaManifest } from '../config/mediaManifest';
 
@@ -102,4 +103,43 @@ test('buildWhatsAppDeepLink stays null unless number is verified and provided', 
 
   const link = buildWhatsAppDeepLink('Hello Radhe Studio', '+91 98765 43210', true);
   assert.equal(link, 'https://wa.me/919876543210?text=Hello%20Radhe%20Studio');
+});
+
+test('calculateMainScrollProgress tracks main content bounds and clamps cleanly', () => {
+  assert.equal(
+    calculateMainScrollProgress({
+      scrollY: 0,
+      mainOffsetTop: 64,
+      mainHeight: 2836,
+      viewportHeight: 900,
+    }),
+    0,
+  );
+  assert.equal(
+    calculateMainScrollProgress({
+      scrollY: 1000,
+      mainOffsetTop: 64,
+      mainHeight: 2836,
+      viewportHeight: 900,
+    }),
+    0.5,
+  );
+  assert.equal(
+    calculateMainScrollProgress({
+      scrollY: 2500,
+      mainOffsetTop: 64,
+      mainHeight: 2836,
+      viewportHeight: 900,
+    }),
+    1,
+  );
+  assert.equal(
+    calculateMainScrollProgress({
+      scrollY: 100,
+      mainOffsetTop: 64,
+      mainHeight: 600,
+      viewportHeight: 900,
+    }),
+    0,
+  );
 });

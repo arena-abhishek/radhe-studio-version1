@@ -5,6 +5,7 @@ import { getRouteMeta, resolveRoute } from './utils/inquiry';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { LightboxModal } from './components/LightboxModal';
+import { ScrollProgressBar } from './components/ScrollProgressBar';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -102,6 +103,8 @@ export default function App() {
       >
         Skip to main content
       </a>
+
+      <ScrollProgressBar route={currentRoute} />
 
       <Header currentRoute={currentRoute} onNavigate={navigate} />
 

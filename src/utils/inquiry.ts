@@ -158,3 +158,24 @@ export function buildWhatsAppDeepLink(
   }
   return `https://wa.me/${digits}?text=${encodeURIComponent(summaryText)}`;
 }
+
+export interface MainScrollMetrics {
+  scrollY: number;
+  mainOffsetTop: number;
+  mainHeight: number;
+  viewportHeight: number;
+}
+
+export function calculateMainScrollProgress({
+  scrollY,
+  mainOffsetTop,
+  mainHeight,
+  viewportHeight,
+}: MainScrollMetrics): number {
+  const maxScroll = mainOffsetTop + mainHeight - viewportHeight;
+  if (maxScroll <= 0) {
+    return 0;
+  }
+  const raw = scrollY / maxScroll;
+  return Math.min(1, Math.max(0, Number(raw.toFixed(4))));
+}

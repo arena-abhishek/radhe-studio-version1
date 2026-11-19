@@ -80,6 +80,12 @@
   will-change: auto;
 }
 
+.scroll-progress-bar {
+  transform: scaleX(var(--scroll-progress, 0));
+  transform-origin: left center;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
