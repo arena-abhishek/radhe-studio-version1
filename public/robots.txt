@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace the Sitemap domain with your confirmed production domain before publishing.
+# Sitemap: https://your-confirmed-domain.com/sitemap.xml

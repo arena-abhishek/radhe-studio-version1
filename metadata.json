@@ -1,0 +1,6 @@
+{
+  "name": "Radhe Studio — Stories in Light",
+  "description": "Warm ivory editorial photography studio website demo for Radhe Studio featuring five navigable views, accessible gallery lightbox, and interactive booking inquiry summary.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
